@@ -4,6 +4,7 @@ public class TV extends Equipment {
 
     private int size;
     private int resolution;
+    private StringBuilder builder;
 
     public TV(String refNumber, String model, int size, int resolution) {
         super(refNumber, model);
@@ -29,11 +30,20 @@ public class TV extends Equipment {
 
     @Override
     public String toString() {
-        return "TV{" +
-                "size=" + size +
-                ", resolution=" + resolution +
-                ", refNumber='" + refNumber + '\'' +
-                ", model='" + model + '\'' +
-                '}';
+        builder = new StringBuilder();
+        builder.append("TV{");
+        builder.append("size=");
+        builder.append(size);
+        builder.append(", resolution=");
+        builder.append(resolution);
+        builder.append(", refNumber='");
+        builder.append(refNumber);
+        builder.append('\'');
+        builder.append(", model='");
+        builder.append(model);
+        builder.append('\'');
+        builder.append('}');
+
+        return builder.toString();
     }
 }

@@ -4,6 +4,7 @@ public class Restaurant {
     private String name;
     private String openHours;
     private Hotel hotel;
+    private StringBuilder builder;
 
     public Restaurant(String name, String openHours, Hotel hotel) {
         this.name = name;
@@ -37,10 +38,16 @@ public class Restaurant {
 
     @Override
     public String toString() {
-        return "Restaurant{" +
-                "name='" + name + '\'' +
-                ", openHours='" + openHours + '\'' +
-                ", hotel=" + hotel +
-                "}\n";
+        builder = new StringBuilder();
+        builder.append("Restaurant{");
+        builder.append("name=");
+        builder.append(name);
+        builder.append(", open hours=");
+        builder.append(openHours);
+        builder.append(", Hotel='");
+        builder.append(this.getHotel().getName());
+        builder.append('}');
+
+        return builder.toString();
     }
 }

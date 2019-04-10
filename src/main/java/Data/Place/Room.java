@@ -8,6 +8,7 @@ public class Room {
     private String name;
     private int floorNumber;
     private Equipment[] equipment;
+    private StringBuilder builder;
 
     public Room(String name, int floorNumber, Equipment[] equipment) {
         this.name = name;
@@ -41,10 +42,18 @@ public class Room {
 
     @Override
     public String toString() {
-        return "Room{" +
-                "name='" + name + '\'' +
-                ", floorNumber=" + floorNumber +
-                ", equipment=" + Arrays.toString(equipment) +
-                "}\n";
+        builder = new StringBuilder();
+        builder.append("Room{");
+        builder.append("name='");
+        builder.append(name);
+        builder.append('\'');
+        builder.append(", floorNumber=");
+        builder.append(floorNumber);
+        builder.append(", equipment=");
+        builder.append(Arrays.toString(equipment));
+        builder.append("}\n");
+
+
+        return builder.toString();
     }
 }

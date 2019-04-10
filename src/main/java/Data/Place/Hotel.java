@@ -8,6 +8,7 @@ public class Hotel {
     private String adress;
     private Room[] rooms;
     private Restaurant restaurant;
+    private StringBuilder builder;
 
     public Hotel(String name, String adress, Room[] rooms, Restaurant restaurant) {
         this.name = name;
@@ -51,11 +52,19 @@ public class Hotel {
 
     @Override
     public String toString() {
-        return "Hotel{" +
-                "name='" + name + '\'' +
-                ", adress='" + adress + '\'' +
-                ", rooms=" + Arrays.toString(rooms) +
-                ", restaurant=" + restaurant +
-                "}\n";
+        builder = new StringBuilder();
+
+        builder.append("Hotel{");
+        builder.append("name=");
+        builder.append(name);
+        builder.append(", adress=");
+        builder.append(adress);
+        builder.append(", rooms=");
+        builder.append(Arrays.toString(rooms));
+        builder.append(", Restaurant='");
+        builder.append(restaurant);
+        builder.append('}');
+
+        return builder.toString();
     }
 }

@@ -3,6 +3,7 @@ package Data.equipment;
 public class AirConditioner extends Equipment{
     private int power;
     private int noiceLevel;
+    StringBuilder builder;
 
     public AirConditioner(String refNumber, String model, int power, int noiceLevel) {
         super(refNumber, model);
@@ -28,11 +29,20 @@ public class AirConditioner extends Equipment{
 
     @Override
     public String toString() {
-        return "AirConditioner{" +
-                "power=" + power +
-                ", noiceLevel=" + noiceLevel +
-                ", refNumber='" + refNumber + '\'' +
-                ", model='" + model + '\'' +
-                '}';
+        builder = new StringBuilder();
+        builder.append("AirConditioner{");
+        builder.append("power=");
+        builder.append(power);
+        builder.append(", noiceLevel=");
+        builder.append(noiceLevel);
+        builder.append(", refNumber='");
+        builder.append(refNumber);
+        builder.append('\'');
+        builder.append(", model='");
+        builder.append(model);
+        builder.append('\'');
+        builder.append('}');
+
+        return builder.toString();
     }
 }
